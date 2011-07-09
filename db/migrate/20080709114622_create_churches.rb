@@ -1,3 +1,4 @@
+
 class CreateChurches < ActiveRecord::Migration
   def self.up
     create_table :churches do |t|
@@ -12,6 +13,7 @@ class CreateChurches < ActiveRecord::Migration
       t.string :lat
       t.string :lng
       t.integer :created_by,:updated_by
+      t.boolean :deleted
       t.timestamps
     end
   end

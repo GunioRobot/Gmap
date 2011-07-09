@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20080710044243) do
     t.string   "url"
     t.string   "lat"
     t.string   "lng"
-    t.integer  "created_by",      :limit => 11
-    t.integer  "updated_by",      :limit => 11
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.boolean  "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20080710044243) do
   end
 
   create_table "events", :force => true do |t|
-    t.integer  "church_id",   :limit => 11
+    t.integer  "church_id"
     t.string   "title"
     t.string   "repete_on"
     t.string   "description"
@@ -43,29 +44,42 @@ ActiveRecord::Schema.define(:version => 20080710044243) do
     t.time     "end_at"
     t.date     "start_date"
     t.date     "end_date"
-    t.boolean  "recurring",                 :default => true
-    t.integer  "created_by",  :limit => 11
-    t.integer  "updated_by",  :limit => 11
+    t.boolean  "recurring",   :default => true
+    t.integer  "created_by"
+    t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "services", :force => true do |t|
-    t.integer  "church_id",  :limit => 11
+    t.integer  "church_id"
     t.string   "title"
     t.string   "repete_on"
     t.time     "start_at"
     t.time     "end_at"
     t.date     "start_date"
     t.date     "end_date"
-    t.boolean  "recurring",                :default => true
-    t.integer  "created_by", :limit => 11
-    t.integer  "updated_by", :limit => 11
+    t.boolean  "recurring",  :default => true
+    t.integer  "created_by"
+    t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "name"
+    t.string   "password"
+    t.string   "question"
+    t.string   "answer"
+    t.string   "password_salt"
+    t.string   "password_hash"
+    t.string   "status"
+    t.integer  "login_count"
+    t.datetime "last_login"
+    t.string   "email_activation"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

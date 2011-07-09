@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
-gem 'rails', '2.3.5'
+gem 'rails', '2.3.8'
 
-gem 'mysql2'
+gem 'mysql'
 
 gem 'ym4r'

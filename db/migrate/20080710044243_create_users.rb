@@ -10,7 +10,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_salt
       t.string :password_hash
       t.string :status
+      t.integer :login_count
+      t.datetime :last_login
       t.string :email_activation
+      t.boolean :admin
       t.timestamps
     end
   end
