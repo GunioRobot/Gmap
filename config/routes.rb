@@ -13,6 +13,24 @@ Cf::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resources :users,:passwords
+  resources :services
+  resources :events
+  resources :sessions
+  resources :churches do
+    resources :services
+    resources :events
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :sessions
+  resources :searches do
+    collection do
+      get 'list'
+    end
+  end
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -48,8 +66,8 @@ Cf::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
-
+    root :to => "searches#index"
+    match "login" => "sessions#new"    
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
