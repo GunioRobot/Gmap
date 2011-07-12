@@ -23,14 +23,15 @@ ChurchServiceFinder.com provides Christian church service and event listings in 
 	   <%= link_to_function 'Search Results(TODO)', 'alert("take me back to search results")' %>
 	 <% end %>
 	 <% content_tag :li, :class => 'filter_results' do %>
-	   <%=link_to_remote "Filter Search" , :update =>"search_result", :url => edit_search_path(1), :method => :get %>
+	   <%=link_to "Filter Search" , :url => edit_search_path(1), :remote=>true, :method => :get %>
 	<% end %>                                                                                        
 	<% end %>
 	
 	<div id="search_container">
 		<div id=map>
 		<%= GMap.header %>
-		<%= @map.to_html %>	
+		<%#=raise @map.inspect%>
+                <%= @map.to_html %>	
 		<%= @map.div() %>	
 	</div>
   

@@ -12,8 +12,8 @@ validates_format_of :phone,:std_code,:area_code, :with => /^[+\/\-() 0-9]+$/, :m
 
 
 def self.location(lat,lng,range,page)
-Church.paginate(:all, :page=>page, :per_page => 6,:origin=>[lat,lng], :conditions=>["distance < ?",range],:units => :miles, :limit=>'6', :order=>'distance')
-
+ debugger 
+ Church.paginate(:all, :page=>page, :per_page => 6,:origin=>[lat,lng], :conditions=>["distance < ?",range],:units => :miles, :limit=>'6', :order=>'distance')
 end
 
 def self.upcoming_service(church)

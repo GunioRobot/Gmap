@@ -2,7 +2,7 @@
 	<%count=1%>	
 	<table>
 	<%for x in @churches%>
-		<tr><td><%=link_to_remote(image_tag("/images/marker/#{x.denomination.color.name}_#{count}.png"), :url=>{:action=>"show",:id=>x.id,:count=>count},:method=>'get')%><%=link_to_remote x.name , :update =>"services", :url =>{:action =>"new",:id =>x.id},:after =>"$(service_name).show();" %></td>
+		<tr><td>test<%#=#link_to_remote(image_tag("/images/marker/#{x.denomination.color.name}_#{count}.png"), :url=>{:action=>"show",:id=>x.id,:count=>count},:method=>'get')%><%#=#link_to_remote x.name , :update =>"services", :url =>{:action =>"new",:id =>x.id},:after =>"$(service_name).show();" %></td>
 													
 			<td><b><%=Church.calculate_distance(x.lat,x.lng,@loc.lat,@loc.lng)%></b>&nbsp;&nbsp;Miles</td></tr>
 		<%@services = x.services.find(:all,:conditions=>["start_date >=? or recurring=?",Date.today,false],:limit=>2)%>

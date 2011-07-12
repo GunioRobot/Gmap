@@ -8,20 +8,20 @@
 <%= javascript_include_tag "#{controller.controller_name}" %>
 <%= stylesheet_link_tag "#{controller.controller_name}" %>
 <%= stylesheet_link_tag "main" %>
-<%= calendar_date_select_includes "red"  %>
+<%#= calendar_date_select_includes "red"  %>
 </head>
 
 <body>
-<% content_tag :div, :id => 'main_container', :class => 'main' do %>
-<% content_tag :div, :id => 'main_container_inner', :class => 'main' do %>
+<%= content_tag :div, :id => 'main_container', :class => 'main' do %>
+<%= content_tag :div, :id => 'main_container_inner', :class => 'main' do %>
 
-<% content_tag :div, :id => 'top' do %>
+<%= content_tag :div, :id => 'top' do %>
 
-  <% content_tag :div, :id => 'banner' do %>
+  <%= content_tag :div, :id => 'banner' do %>
     <%= image_tag("website_name.png") %>
   <% end %>
 
-  <% content_tag :ul, :id=> 'top_menu' do %>
+  <%= content_tag :ul, :id=> 'top_menu' do %>
     <%= top_menu_entry(link_to( "Home",searches_path), true) %> 
     <%if session[:user]!=nil%>
       <%= top_menu_entry(link_to "Manage Churches", churches_path) %> 
@@ -39,21 +39,21 @@
 
 <% end %>
 
-<% content_tag :div, :id => 'left', :class => 'body_border' do %>
+<%= content_tag :div, :id => 'left', :class => 'body_border' do %>
 <% end %>
 
-<% content_tag :div, :id => 'right', :class => 'body_border' do %>
+<%= content_tag :div, :id => 'right', :class => 'body_border' do %>
 <% end %>
 
 
-<% content_tag :div, :id => 'centre' do %>
+<%= content_tag :div, :id => 'centre' do %>
   <%= flash[:notice] %>
   <%= yield %>
 <% end %>
 
 <%= content_tag( :p, '', :class => 'clear_float') %>
 
-<% content_tag :div, :id => 'footer' do %>
+<%= content_tag :div, :id => 'footer' do %>
 <% end %>
 
 
@@ -62,3 +62,5 @@
 
 </body>
 </html>
+
+

@@ -2,6 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'ym4r'
+gem 'geokit'
+gem 'mysql'
+gem "will_paginate"
+gem "ruby-debug", :git => 'git://github.com/mark-moseley/ruby-debug.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
