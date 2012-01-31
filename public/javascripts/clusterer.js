@@ -1,11 +1,11 @@
 // Clusterer for Mapstraction: To display a large number of markers
 //
-// Usage: 
+// Usage:
 //
 // When you have a Mapstraction object (for example, of name mapstraction), do:
-// 
+//
 // var clusterer = new Clusterer(mapstraction);
-// 
+//
 // Then you must add markers to the clusterer.
 //
 // clusterer.addMarker(marker);
@@ -55,16 +55,16 @@ Clusterer = function (markers, options){
 
     this.clusters = [];
     this.timeout = null;
-    
+
     options = options || new Object();
-    this.maxVisibleMarkers = options.maxVisibleMarkers || 150; 
+    this.maxVisibleMarkers = options.maxVisibleMarkers || 150;
     this.gridSize = options.gridSize || 5;
     this.minMarkersPerCluster = options.minMarkersPerCluster ||5;
     this.maxLinesPerInfoBox = options.maxLinesPerInfoBox ||10;
     this.icon = options.icon;
-    
+
     map.addEventListener("moveend",Clusterer.makeCaller( Clusterer.display, this ) );
-   
+
 };
 
 // Call this to add a marker.
@@ -120,7 +120,7 @@ Clusterer.prototype.removeMarker = function ( marker )
 	    break;
 	    }
     this.displayLater();
- 
+
     };
 
 
@@ -165,7 +165,7 @@ Clusterer.display = function ( clusterer )
     dx *= 0.10;
     dy *= 0.10;
     bounds = new BoundingBox(sw.lat - dy, sw.lon - dx,ne.lat + dy, ne.lon + dx);
-   
+
 
     // Partition the markers into visible and non-visible lists.
     var visibleMarkers = [];

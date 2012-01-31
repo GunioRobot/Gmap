@@ -12,7 +12,7 @@ module WillPaginate
       super "#{page.inspect} given as value, which translates to '#{page_num}' as page number"
     end
   end
-  
+
   # Arrays returned from paginating finds are, in fact, instances of this.
   # You may think of WillPaginate::Collection as an ordinary array with some
   # extra properties. Those properties are used by view helpers to generate
@@ -34,7 +34,7 @@ module WillPaginate
       raise InvalidPage.new(page, @current_page) if @current_page < 1
       @per_page = per_page.to_i
       raise ArgumentError, "`per_page` setting cannot be less than 1 (#{@per_page} given)" if @per_page < 1
-      
+
       self.total_entries = total if total
     end
 
@@ -119,7 +119,7 @@ module WillPaginate
     # in +create+.
     def replace(array)
       result = super
-      
+
       # The collection is shorter then page limit? Rejoice, because
       # then we know that we are on the last page!
       if total_entries.nil? and length < per_page and (current_page == 1 or length > 0)

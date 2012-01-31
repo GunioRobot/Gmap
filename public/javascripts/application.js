@@ -32,11 +32,11 @@ var RoundBorders = Class.create ({
     });
   }
 });
-	
+
 	// Added For Character Remaning For Text Area
 	var current_count = 0;
 	var max_count = 255;
-	
+
 	//Toggeling Events
 	function event_hide()
 	{
@@ -45,7 +45,7 @@ var RoundBorders = Class.create ({
 	start_at.style.display = $F("event_recurring") ? "block" : "none";
 	start_time.style.display = $F("event_recurring") ? "none" : "block";
 	}
-	
+
 	//Toggeling Services
 	function service_hide()
 	{
@@ -54,7 +54,7 @@ var RoundBorders = Class.create ({
 	start_at.style.display = $F("service_recurring") ? "block" : "none";
 	start_time.style.display = $F("service_recurring") ? "none" : "block";
 	}
-	
+
 	//Counting Number Of Character
 	function textCounter(field, target){
 		if (field.value.length > max_count) {
@@ -65,21 +65,21 @@ var RoundBorders = Class.create ({
 			target.value = current_count;
 		}
 	}
-	
+
 	function show_service_link_on_info_window(id)
 	{
-    	 new Ajax.Updater('services', '/searches/new', 
-		 {asynchronous:true, evalScripts:true, 
-		 parameters:"id="+id + "&authenticity_token=" + 
-		 encodeURIComponent('f9eecc2abc1776ae1467fd906aa11d73f71812ee')}); 
+    	 new Ajax.Updater('services', '/searches/new',
+		 {asynchronous:true, evalScripts:true,
+		 parameters:"id="+id + "&authenticity_token=" +
+		 encodeURIComponent('f9eecc2abc1776ae1467fd906aa11d73f71812ee')});
 	}
-	
+
 	function show_event_link_on_info_window(id)
-   {  
+   {
     $('show_service').hide();
 	$('show_event').show();
-   	 new Ajax.Updater('show_event', '/searches/new', 
-		 {asynchronous:true, evalScripts:true, 
-		 parameters:"id="+id + "&authenticity_token=" + 
-		 encodeURIComponent('f9eecc2abc1776ae1467fd906aa11d73f71812ee')}); 
+   	 new Ajax.Updater('show_event', '/searches/new',
+		 {asynchronous:true, evalScripts:true,
+		 parameters:"id="+id + "&authenticity_token=" +
+		 encodeURIComponent('f9eecc2abc1776ae1467fd906aa11d73f71812ee')});
    }

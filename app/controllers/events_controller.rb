@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
-  before_filter :load_church,:check_authentication 
-  
+  before_filter :load_church,:check_authentication
+
   def index
     @div_id= params[:church_id]
     @events = @church.events.find(:all,:conditions=>["start_date >=? or recurring=?",Date.today,false])
@@ -12,20 +12,20 @@ class EventsController < ApplicationController
     @event = @church.events.find(params[:id])
   end
 
- 
+
   def new
     @div_id= params[:church_id]
     @event = @church.events.build
   end
 
- 
+
   def edit
        @event = @church.events.find(params[:id])
   end
 
-  
+
   def create
-    
+
      @event = @church.events.build(params[:event])
      @event.created_by=session[:user]
       if params[:event][:recurring]=="1"
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
         else
               flash[:notice]= "Please Select proper time"
               render :action => "new",:layout=>true
-        end  
+        end
      else
           @event.save
           redirect_to :controller =>"churches", :action =>"index"
@@ -52,7 +52,7 @@ class EventsController < ApplicationController
 
 
 
- 
+
   def update
     @event = @church.events.find(params[:id])
 
@@ -62,10 +62,10 @@ class EventsController < ApplicationController
         else
         render :action => "edit"
         end
-  
+
   end
 
- 
+
   def destroy
     @event = @church.events.find(params[:id])
     @event.destroy
@@ -75,7 +75,7 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def load_church
     @church=Church.find(params[:church_id])
   end

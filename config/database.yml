@@ -37,5 +37,5 @@ production:
   encoding: utf8
   database: church_finder_production
   username: root
-  password: 
+  password:
   host: localhost

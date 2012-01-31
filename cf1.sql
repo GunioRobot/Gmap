@@ -53,7 +53,7 @@ CREATE TABLE `churches` (
 --
 
 /*!40000 ALTER TABLE `churches` DISABLE KEYS */;
-INSERT INTO `churches` (`id`,`name`,`street`,`city`,`zip`,`phone`,`denomination_id`,`url`,`lat`,`lng`,`created_by`,`updated_by`,`created_at`,`updated_at`,`deleted`,`state_id`,`std_code`,`area_code`) VALUES 
+INSERT INTO `churches` (`id`,`name`,`street`,`city`,`zip`,`phone`,`denomination_id`,`url`,`lat`,`lng`,`created_by`,`updated_by`,`created_at`,`updated_at`,`deleted`,`state_id`,`std_code`,`area_code`) VALUES
  (7,'Christ Episcopal Church','120 East Edenton Street','Raleigh','27601','919-834-6259','1','',NULL,NULL,49,49,'2008-07-16 06:26:55','2008-07-31 12:23:34',1,1,'',''),
  (9,'Hayes Barton Baptist Church','1800 Glenwood Ave','Raleigh','27608','919-833-8617','5','','35.809188','-78.845188',49,NULL,'2008-07-16 06:26:55','2008-07-16 07:01:45',0,2,'',''),
  (11,'Hope Community Church','821 Buck Jones Road','Raleigh','27606','919-532-0620','2','www.gethope.net','35.737593','-78.721192',49,NULL,'2008-07-16 06:26:55','2008-07-16 07:01:53',0,3,'',''),
@@ -86,7 +86,7 @@ CREATE TABLE `colors` (
 --
 
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
-INSERT INTO `colors` (`id`,`name`) VALUES 
+INSERT INTO `colors` (`id`,`name`) VALUES
  (000,'red'),
  (001,'green'),
  (002,'blue');
@@ -112,7 +112,7 @@ CREATE TABLE `denominations` (
 --
 
 /*!40000 ALTER TABLE `denominations` DISABLE KEYS */;
-INSERT INTO `denominations` (`id`,`name`,`created_at`,`updated_at`,`color_id`) VALUES 
+INSERT INTO `denominations` (`id`,`name`,`created_at`,`updated_at`,`color_id`) VALUES
  (1,'baptist',NULL,NULL,1),
  (2,'catholic',NULL,NULL,2),
  (3,'episcopal',NULL,NULL,0),
@@ -157,7 +157,7 @@ CREATE TABLE `events` (
 --
 
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` (`id`,`church_id`,`title`,`description`,`start_at`,`end_at`,`start_date`,`end_date`,`recurring`,`created_by`,`updated_by`,`created_at`,`updated_at`,`start_day`,`end_day`) VALUES 
+INSERT INTO `events` (`id`,`church_id`,`title`,`description`,`start_at`,`end_at`,`start_date`,`end_date`,`recurring`,`created_by`,`updated_by`,`created_at`,`updated_at`,`start_day`,`end_day`) VALUES
  (15,5,'events non recurring','non recurring events','16:53:00','19:53:00','2008-08-30','2008-08-31',1,49,NULL,'2008-07-28 11:24:16','2008-07-28 11:24:16','',''),
  (16,5,'recurring events','recurring events','11:24:00','11:42:00',NULL,NULL,0,49,NULL,'2008-07-28 11:24:42','2008-07-28 11:24:42','Sun','Sun'),
  (17,5,'new one','','11:23:00','11:23:00',NULL,NULL,1,49,NULL,'2008-07-30 11:23:51','2008-07-30 11:23:51','',''),
@@ -194,7 +194,7 @@ CREATE TABLE `schema_migrations` (
 --
 
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` (`version`) VALUES 
+INSERT INTO `schema_migrations` (`version`) VALUES
  ('20080709114622'),
  ('20080709114721'),
  ('20080709114736'),
@@ -231,7 +231,7 @@ CREATE TABLE `services` (
 --
 
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
-INSERT INTO `services` (`id`,`church_id`,`title`,`start_at`,`end_at`,`start_date`,`end_date`,`recurring`,`created_by`,`updated_by`,`created_at`,`updated_at`,`start_day`,`end_day`) VALUES 
+INSERT INTO `services` (`id`,`church_id`,`title`,`start_at`,`end_at`,`start_date`,`end_date`,`recurring`,`created_by`,`updated_by`,`created_at`,`updated_at`,`start_day`,`end_day`) VALUES
  (126,4,'july  non recurring','16:28:00','16:28:00','2008-07-01','2008-07-02',1,49,NULL,'2008-07-28 10:58:50','2008-07-28 10:58:50','',''),
  (127,4,'july  recurring','11:10:00','11:19:00',NULL,NULL,1,49,NULL,'2008-07-28 11:10:23','2008-07-30 11:09:15','Sun','Sun'),
  (128,17,'dfgdf','09:40:00','09:40:00',NULL,NULL,1,68,NULL,'2008-07-30 09:42:33','2008-07-30 09:42:33','',''),
@@ -287,7 +287,7 @@ CREATE TABLE `states` (
 --
 
 /*!40000 ALTER TABLE `states` DISABLE KEYS */;
-INSERT INTO `states` (`name`,`id`) VALUES 
+INSERT INTO `states` (`name`,`id`) VALUES
  ('Alabama ',1),
  ('Alaska ',2),
  ('Arizona ',3),
@@ -370,7 +370,7 @@ CREATE TABLE `users` (
 --
 
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`,`username`,`email`,`question`,`answer`,`password_hash`,`login_count`,`last_login`,`created_at`,`updated_at`,`name`,`status`,`email_activation`,`admin`,`password_salt`) VALUES 
+INSERT INTO `users` (`id`,`username`,`email`,`question`,`answer`,`password_hash`,`login_count`,`last_login`,`created_at`,`updated_at`,`name`,`status`,`email_activation`,`admin`,`password_salt`) VALUES
  (49,'ranjan','ran_foru@yahoo.co.in','ranjan','ranjan','81358e50f8ecee60c807a544b4839cde3e932e645aacd72e5bcedcb350c425fc',34,'2008-08-06 12:10:52','2008-07-29 12:26:26','2008-08-06 12:10:52','ranjan','active','1-8eb831cc8d9d69ca427f999632421d77d56ea15f390470657a3919332173dba8',1,'g8TKZvbr'),
  (68,'ranjank','ranjan.kumar@sumerusolutions.com','ranjank','ranjank','05907d930383d63993be4908ab8846cc373c37733f36efe56909f65d80ffd8db',3,'2008-07-30 09:30:44','2008-07-29 12:27:46','2008-07-30 09:30:44','ranjank','active','2-1a6cf654659181e9be80fcc8ac9950b98e05029c9942a981f00fcfb0bb3b7285',0,'KHfACvUt'),
  (69,'123','ranjank@sdfs.com','ranjan','ranjan','5c354b1e198ec7ce807c993b69f42cbc3d879adfcd95c7c09ba0d00351e52879',NULL,NULL,'2008-07-29 13:41:41','2008-07-30 11:50:03','456','expired','69-66cee42a99b5dbc0a8ce60d38d8bc03b368f2f1031b32c63f782e1f093030433',0,'jPkRkAPo'),

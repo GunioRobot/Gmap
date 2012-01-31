@@ -38,12 +38,12 @@ validates_inclusion_of to restrict the possible values (just like an enum).
 
   u = User.find_by_name('Anna')   # => #<User Anna>
   u.gender                        # => :female
-  
+
   u = User.find_by_gender(:male)  # => #<User Bob>
   u.gender                        # => :male
-  
+
   u = User.find(:all, :conditions => { :gender => :female })
-  
+
   u = User.new(:name => 'ET', :gender => :unknown)
   u.save                          # => validation fails
 

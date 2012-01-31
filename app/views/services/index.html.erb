@@ -14,7 +14,7 @@
 <% for service in @services %>
   <tr>
   	<td><%=service.title%></td>
-	<%if service.recurring == true%> 
+	<%if service.recurring == true%>
 	<td><%=service.start_at.strftime("%a ")%><%=service.start_date.strftime(" %b %d ")%><%=service.start_at.strftime(" %I:%M%p ")%></td>
 	<td><%=service.end_at.strftime("%a ")%><%=service.end_date.strftime(" %b %d ")%><%=service.end_at.strftime(" %I:%M%p ")%></td>
     <%else%>

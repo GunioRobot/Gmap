@@ -1,16 +1,16 @@
 class MailRobot < ActionMailer::Base
-	
-  	
+
+
 	 def new_password(user, password)
     recipients user.email
     from  "churchfinder.com"
-    subject "New Password " 
+    subject "New Password "
     @body["name"]=user.name
     @body["username"] = user.username
     @body["new_password"] = password
   end
-  
-  
+
+
       def confirmation_email(user,confirmation_code,password)
       setup_email(user)
       @subject    += 'Your account has been activated!'
@@ -19,16 +19,16 @@ class MailRobot < ActionMailer::Base
 
 protected
 
-    def setup_email(user) 
+    def setup_email(user)
       @recipients  = "#{user.email}"
       @from        = "churchfinder.com"
       @subject     ="Mail from church finder"
       @sent_on     = Time.now
     end
 
-  
-  
+
+
 end
-  
-  
+
+
 

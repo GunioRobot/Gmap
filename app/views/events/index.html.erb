@@ -5,7 +5,7 @@
 <div id="event_<%=@div_id%>"></div>
 <table border=1 cellspacing=0>
   <tr>
-  	
+
 	<th>Title </th>
 	<th>Start At </th>
 	<th>End At</th>
@@ -14,7 +14,7 @@
 <% for event in @events %>
   <tr>
   	<td><%=event.title%></td>
-	<%if event.recurring == true%> 
+	<%if event.recurring == true%>
 	<td><%=event.start_at.strftime("%a ")%><%=event.start_date.strftime(" %b %d ")%><%=event.start_at.strftime(" %I:%M%p ")%></td>
 	<td><%=event.end_at.strftime("%a ")%><%=event.end_date.strftime(" %b %d ")%><%=event.end_at.strftime(" %I:%M%p ")%></td>
     <%else%>

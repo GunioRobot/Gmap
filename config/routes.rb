@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.root :controller => 'churches'
 #  map.resources :churches, :has_many => :services
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -33,7 +33,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -53,10 +53,10 @@ ActionController::Routing::Routes.draw do |map|
 
   # Install the default routes as the lowest priority.
  # map.root :controller =>"sessions", :action=>"new"
-  
+
   map.root :controller =>"searches",:action=>"index"
   map.connect 'login',:controller=>'sessions',:action=>'new'
-  
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

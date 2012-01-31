@@ -5,9 +5,9 @@ module EventsHelper
  HASHEs = {
   "Day" =>[
     ["Sunday","suday"],
-    ["Monday","monday"], 
+    ["Monday","monday"],
     ["Tuesday","tuesday"],
-    ["Wednesday","wednesday"], 
+    ["Wednesday","wednesday"],
     ["Thrusday","thrusday"],
     ["Friday","friday"],
     ["Saturday","saturday"]
@@ -16,7 +16,7 @@ module EventsHelper
 
   def get_hash(lov_name)
     return [["Select", "" ]]+ HASHEs[lov_name];
-    
+
   end
 
 

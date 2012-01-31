@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_filter :check_authentication, :only =>[:index] 
-  
+before_filter :check_authentication, :only =>[:index]
+
   def index
     @users = User.find(:all)
     respond_to do |format|
@@ -18,7 +18,7 @@ before_filter :check_authentication, :only =>[:index]
     end
   end
 
-  
+
   def new
     @user = User.new
     respond_to do |format|
@@ -32,7 +32,7 @@ before_filter :check_authentication, :only =>[:index]
     @user = User.find(params[:id])
   end
 
- 
+
   def create
      @user = User.new(params[:user])
      @user.password=(params[:user][:password])
@@ -45,10 +45,10 @@ before_filter :check_authentication, :only =>[:index]
       else
         render :action=>'new'
       end
-   
+
   end
 
-  
+
   def update
     @user = User.find(params[:id])
     respond_to do |format|
@@ -63,7 +63,7 @@ before_filter :check_authentication, :only =>[:index]
     end
   end
 
-  
+
   def destroy
     @user = User.find(params[:id])
     @user.status="expired"

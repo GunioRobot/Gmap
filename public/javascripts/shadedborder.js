@@ -58,7 +58,7 @@ create: function(opts) {
   if (!/l/i.test(edges)) lw=0;
   if (!/r/i.test(edges)) rw=0;
 
-  var p = { position:"absolute", left:"0", top:"0", width:lw + "px", height:th + "px", 
+  var p = { position:"absolute", left:"0", top:"0", width:lw + "px", height:th + "px",
             ie_fontSize:"1px", overflow:"hidden", margin:"0", padding:"0" }; var tl = crdiv(p);
   delete p.left; p.right="0"; p.width=rw + "px"; var tr = crdiv(p);
   delete p.top; p.bottom="0"; p.height=bh + "px"; var br = crdiv(p);
@@ -70,12 +70,12 @@ create: function(opts) {
                   margin:"0 "+ rw + "px 0 " + lw + "px", overflow:"hidden", padding:"0" });
   tw.appendChild(t);
 
-  var bw = crdiv({ position:"absolute", left:"0", bottom:"0", width:"100%", height:bh + "px", 
+  var bw = crdiv({ position:"absolute", left:"0", bottom:"0", width:"100%", height:bh + "px",
                    ie_fontSize:"1px", overflow:"hidden", margin:"0", padding:"0" });
-                   
+
   var b = crdiv({ position:"relative", height:bh + "px", ie_fontSize:"1px",
                   margin:"0 "+ rw + "px 0 " + lw + "px", overflow:"hidden", padding:"0" });
-                  
+
   bw.appendChild(b);
 
   var mw = crdiv({ position:"absolute", top:(-bh)+"px", left:"0", width:"100%", height:"100%",
@@ -86,7 +86,7 @@ create: function(opts) {
     var h = t ? th : bh;
     var s = t ? cs : -cs;
     var dsb = []; var dsi = []; var dss = [];
-    
+
     var xp=0; var xd=1; if (l) { xp=w-1; xd=-1; }
     for (var x=0; x<w; ++x) {
       var yp=h-1; var yd=-1; if (t) { yp=0; yd=1; }
@@ -112,7 +112,7 @@ create: function(opts) {
             } else dd += op(boo);
             dsb.push(dd + '" class="' + bclass + '"></div>');
           }
-          
+
           // draw inner
           var dd = div + ' z-index:2;' + (t ? 'background-position:0 -' + (r-yc-1) + 'px;' : 'background-image:none;');
           var finish = function() {
@@ -134,7 +134,7 @@ create: function(opts) {
             }
           } else doShadow = true;
         } else doShadow = true;
-        
+
         // draw shadow
         if (sr > 0 && doShadow) {
           d = Math.sqrt(x*x+y*y);
@@ -148,7 +148,7 @@ create: function(opts) {
     }
     el.innerHTML = dss.concat(dsb.concat(dsi)).join('');
   }
-  
+
   function mid(mw) {
     var ds = [];
 
@@ -162,12 +162,12 @@ create: function(opts) {
         ' top:' + (th+bh) + 'px; height:2048px; padding:0; margin:0;';
     if (sr>0) {
       for (var x=0; x<lw-r-cx; ++x) {
-        ds.push(dd + ' left:' + x + 'px;' + op((x+1.0)/lw) + 
+        ds.push(dd + ' left:' + x + 'px;' + op((x+1.0)/lw) +
             '" class="' + sclass + '"></div>');
       }
 
       for (var x=0; x<rw-r-cx; ++x) {
-        ds.push(dd + ' right:' + x + 'px;' + op((x+1.0)/rw) + 
+        ds.push(dd + ' right:' + x + 'px;' + op((x+1.0)/rw) +
             '" class="' + sclass + '"></div>');
       }
     }
@@ -188,7 +188,7 @@ create: function(opts) {
         ' width:100%; left:0px; ';
     var s = t ? cs : -cs;
     for (var y=0; y<h-s-cy-r; ++y) {
-      if (sr>0) ds.push(dd + (t ? 'top:' : 'bottom:') + y + 'px;' + op((y+1)*1.0/h) + 
+      if (sr>0) ds.push(dd + (t ? 'top:' : 'bottom:') + y + 'px;' + op((y+1)*1.0/h) +
           '" class="' + sclass + '"></div>');
     }
     if (y >= bow) {
@@ -196,7 +196,7 @@ create: function(opts) {
           ' height:' + bow + 'px;" class="' + bclass + '"></div>');
     }
 
-    ds.push(dd + (t ? 'background-position-y:0; top:' : 
+    ds.push(dd + (t ? 'background-position-y:0; top:' :
                       'background-image:none; bottom:') + y + 'px;' +
         ' height:' + (r+cy+s) + 'px;" class="' + iclass + '"></div>');
 
@@ -231,7 +231,7 @@ create: function(opts) {
       var twc = tw.cloneNode(true);
       var mwc = mw.cloneNode(true);
       var bwc = bw.cloneNode(true);
-      
+
       el.insertBefore(tl.cloneNode(true), iel); el.insertBefore(tr.cloneNode(true), iel);
       el.insertBefore(bl.cloneNode(true), iel); el.insertBefore(br.cloneNode(true), iel);
       el.insertBefore(twc, iel); el.insertBefore(mwc, iel);

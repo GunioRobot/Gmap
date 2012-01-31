@@ -3,7 +3,7 @@ module TableDefinitionExtensions
     column(:created_by, :integer)
     column(:updated_by, :integer)
   end
-  
+
   def start_end_times
     column(:start_at, :time)
     column(:end_at,   :time)

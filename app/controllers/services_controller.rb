@@ -1,18 +1,18 @@
 class ServicesController < ApplicationController
- 
-  before_filter :find_church,:check_authentication 
+
+  before_filter :find_church,:check_authentication
 
   def index
       @div_id= params[:church_id]
      @services = @church.services.find(:all,:conditions=>["start_date >=? or recurring=?",Date.today,false])
   end
 
-  
+
   def show
     @service = @church.services.find(params[:id])
   end
 
- 
+
   def new
       @service = @church.services.build
    end
@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
     @service = @church.services.find(params[:id])
   end
 
- 
+
   def create
       @service = @church.services.build(params[:service])
       @service.created_by=session[:user]
@@ -37,14 +37,14 @@ class ServicesController < ApplicationController
         else
               flash[:notice]= "Please Select proper time"
               render :action => "new",:layout=>true
-        end  
+        end
      else
           @service.save
           redirect_to :controller =>"churches", :action =>"index"
     end
   end
 
- 
+
   def update
     @service = @church.services.find(params[:id])
 
@@ -54,18 +54,18 @@ class ServicesController < ApplicationController
       else
         render :action => "edit"
       end
-   
+
   end
 
- 
+
   def destroy
     @service = @church.services.find(params[:id])
     @service.destroy
     redirect_to(church_services_path(@church))
   end
-  
+
   private
-  
+
   def find_church
       @church = Church.find(params[:church_id])
   end

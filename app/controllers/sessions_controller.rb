@@ -3,9 +3,9 @@ layout 'main'
 before_filter :check_authentication ,:only => [:destroy]
 def new
     @title = "Church Finder - Login"
-   
+
   end
-  
+
   def create
       begin
         user = User.authenticate(params[:username], params[:password])
@@ -25,7 +25,7 @@ def new
         render :action=>'new'
       end
   end
-  
+
   def update
      user_id=Array.new
      user_id=params[:id].split("-")
@@ -39,7 +39,7 @@ def new
     end
      render :action=>'new'
   end
-  
+
   def destroy
     session[:user] = nil
     reset_session

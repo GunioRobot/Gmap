@@ -35,7 +35,7 @@ def self.upcoming_event(church)
 end
 
 def self.calculate_distance(start_lat,start_lng,end_lat,end_lng)
-  Church.distance_between([start_lat,start_lng],[end_lat,end_lng]).round  
+  Church.distance_between([start_lat,start_lng],[end_lat,end_lng]).round
 end
 
 

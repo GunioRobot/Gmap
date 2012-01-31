@@ -1,8 +1,8 @@
 class PasswordsController < ApplicationController
 before_filter :check_authentication ,:only => [:edit, :update]
-  
+
 def new
- @user=User.new 
+ @user=User.new
 end
 
 def create
@@ -11,7 +11,7 @@ def create
   if @user
     new_password=generate_password()
     @user.password=new_password
-    
+
     @user.save
      flash[:notice] = "Your password has been changed"
      MailRobot::deliver_new_password(@user,new_password)
@@ -19,21 +19,21 @@ def create
   else
     flash[:notice]="Invalid Email"
     render :action=>'new'
-   
+
   end
- 
+
 
 end
 
 def edit
-  
+
 end
 
 def update
-  
+
    if params[:confirm_new_password]==params[:new_password]
     @user=User.find(session[:user])
-        
+
     if User.verify_password(params[:current_password],@user.password_salt,@user.password_hash)
        @user.password=(params[:new_password])
        @user.save
@@ -46,7 +46,7 @@ def update
    flash[:notice]="Error"
    render :action=>'edit'
    end
-   
+
 end
 
 private

@@ -2,9 +2,9 @@ module ServicesHelper
 HASHEs = {
   "Day" =>[
     ["Sunday","suday"],
-    ["Monday","monday"], 
+    ["Monday","monday"],
     ["Tuesday","tuesday"],
-    ["Wednesday","wednesday"], 
+    ["Wednesday","wednesday"],
     ["Thrusday","thrusday"],
     ["Friday","friday"],
     ["Saturday","saturday"]

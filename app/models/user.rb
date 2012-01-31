@@ -4,7 +4,7 @@ attr_accessor :password
 
 validates_presence_of :username,:question,:answer,:name, :email
 
-validates_uniqueness_of :username, :message => "User Name Already Taken" 
+validates_uniqueness_of :username, :message => "User Name Already Taken"
 validates_uniqueness_of :email, :message =>"Email Already Exists"
 validates_format_of :email,:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,:message => " is not in valid format", :if => Proc.new { |a| !a.email.blank? }
 
@@ -43,7 +43,7 @@ end
   end
  #--------Private Actions---------------------------
  private
- 
+
     def self.encrypt(plain)
       return  Digest::SHA256.hexdigest(plain)
     end

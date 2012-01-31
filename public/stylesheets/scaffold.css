@@ -82,13 +82,13 @@ body{background-color:#ededed;margin:0 auto;}
   /* comment out this line to prevent calendar 'floating' over page: */
   position: absolute;
   background-color: #eee;
-  
+
   padding: 3px;
   border: 1px solid silver;
 }
 
 #ForFullBg {
-   background-color:white; 
+   background-color:white;
 }
 
 
@@ -147,13 +147,13 @@ body{background-color:#ededed;margin:0 auto;}
 }
 #ForTopCal {
   background-color:white;
-} 
+}
 
 td.checkbox1 input {
   width: 18px;
   border: 1px solid green;
   /*  margin-right: 5px;*/
-  margin:0px;    
+  margin:0px;
 }
 
 
@@ -196,14 +196,14 @@ td.checkbox1 input {
 	TEXT-DECORATION: none;
 	Text-Align:right;
 	height: 20px;
-	padding:0px 0px 0px 5px;	
+	padding:0px 0px 0px 5px;
 }
 
 .headleft{
 	Font-weight:bold;
 	Text-Align:left;
 	height: 20px;
-	padding:0px 0px 0px 5px;	
+	padding:0px 0px 0px 5px;
 }
 
 /*.oddrow{
@@ -218,7 +218,7 @@ td.checkbox1 input {
 	Color:#818181;
 	Font-Family: Verdana, Helvetica, Sans-serif;
 	Font-size:10px;
-	TEXT-DECORATION: none;	
+	TEXT-DECORATION: none;
 	Font-weight:normal;
 	vertical-align: middle;
 	Text-align:Left;
@@ -234,55 +234,55 @@ td.checkbox1 input {
 }
 
 .weekstyle {
-    border:0px solid #ADDFFF; 
-    border-bottom-color:#ADDFFF; 
+    border:0px solid #ADDFFF;
+    border-bottom-color:#ADDFFF;
     border-bottom:1px solid #ADDFFF;
     border-top:1px solid thick #ADDFFF;
     border-right:1px solid #ADDFFF;
-    font-family:Arial; 
+    font-family:Arial;
     font-weight:Italic;
     font-size:8pt;
     height:40px;
-    width: 100px; 
+    width: 100px;
 }
 
-.td_style1 { 
-    border:0px solid #ADDFFF; 
-    border-bottom-color:#ADDFFF; 
+.td_style1 {
+    border:0px solid #ADDFFF;
+    border-bottom-color:#ADDFFF;
     border-bottom:1px solid #ADDFFF;
     border-top:1px solid thick #ADDFFF;
     border-right:1px solid #ADDFFF;
-    font-family:Arial; 
+    font-family:Arial;
     font-weight:Italic;
     font-size:8pt;
     height:40px;
-  background-color:transparent; 
-      
-  } 
-  .td_style2 { 
-    border:0px solid #ADDFFF; 
+  background-color:transparent;
+
+  }
+  .td_style2 {
+    border:0px solid #ADDFFF;
     border-right-color:#ADDFFF;
     border-top:1px solid thick #ADDFFF;
     border-bottom:1px solid #ADDFFF;
-    border-left:1px solid #ADDFFF; 
+    border-left:1px solid #ADDFFF;
     border-right:1px solid #ADDFFF;
-    font-family:Arial; 
+    font-family:Arial;
     font-weight:Italic;
     font-size:8pt;
     text-align:center;
     width:70px;
-   
-           
+
+
  }
  .td_sty {
     margin-bottom:3px;
-    font-family:Arial; 
+    font-family:Arial;
     font-weight:Italic;
     font-size:8pt;
     text-align:center;
     width:70px;
-    
+
  }
 .timehead {
-   width:100px; 
-} 
+   width:100px;
+}
